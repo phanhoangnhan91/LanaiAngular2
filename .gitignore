@@ -1,0 +1,5 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Lanai/src/Lanai/wwwroot/node_modules/browser-sync/node_modules/rx/ts/core
