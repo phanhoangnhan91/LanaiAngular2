@@ -1,5 +1,4 @@
-﻿/// <reference path="../typings/browser.d.ts" />
-import { bootstrap }    from '@angular/platform-browser-dynamic';
+﻿import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { HTTP_PROVIDERS, RequestOptions, BaseRequestOptions, Headers } from '@angular/http';
 import { LocationStrategy,
     HashLocationStrategy } from '@angular/common';
