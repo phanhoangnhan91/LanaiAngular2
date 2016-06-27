@@ -8,14 +8,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Lanai.Controllers
 {
+    public class Hero{
+        public int id { get; set; }
+        public string name { get; set; }
+        
+    }
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var result = new List<Hero>();
+            result.Add(new Hero { id = 1, name = "nhan" });
+            result.Add(new Hero { id = 2, name = "Narco" });
+            return Json( new { data = result } );
         }
 
         // GET api/values/5
