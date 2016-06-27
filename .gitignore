@@ -3,3 +3,9 @@
 ################################################################################
 
 /Lanai/src/Lanai/wwwroot/node_modules/browser-sync/node_modules/rx/ts/core
+/Lanai/src/Lanai/wwwroot/node_modules/angular2-in-memory-web-api/src
+/Lanai/src/Lanai/wwwroot/node_modules/bs-recipes/recipes
+/Lanai/src/Lanai/wwwroot/node_modules/reflect-metadata/test
+/Lanai/src/Lanai/wwwroot/node_modules/rxjs/src
+/Lanai/src/Lanai/wwwroot/node_modules/rx/ts
+/Lanai/src/Lanai/wwwroot/node_modules/zone.js/lib
