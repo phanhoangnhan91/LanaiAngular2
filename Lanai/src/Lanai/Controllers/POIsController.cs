@@ -21,7 +21,7 @@ namespace Lanai.Controllers
         [HttpGet]
         public async Task<ActionResult> Get()
         {
-
+            //GetFormId();
             using (var client = new HttpClient())
             {
                 try
@@ -29,8 +29,8 @@ namespace Lanai.Controllers
                     client.BaseAddress = new Uri("https://kc.kobotoolbox.org");
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                         "Basic",
-                    Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "ryanspillsbury90", "makanikai"))));
-                    var response = await client.GetAsync("/api/v1/data/29116");
+                    Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "lanaitourapp", "theislandoflanai"))));
+                    var response = await client.GetAsync("/api/v1/data/31202"); //31202 for product, 29116 for dev
                     response.EnsureSuccessStatusCode();// Throw in not success
                     var stringResponse = await response.Content.ReadAsStringAsync();
                     //var ps = JsonConvert.DeserializeObject<IList<Object>>(stringResponse);
@@ -41,6 +41,30 @@ namespace Lanai.Controllers
                 {
                     Console.WriteLine($"Request exception: {e.Message}");
                     return Json(new { data = 0 });
+                }
+            }
+        }
+        /// <summary>
+        /// use for get id at the first time
+        /// </summary>
+        private async void GetFormId()
+        {
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    client.BaseAddress = new Uri("https://kc.kobotoolbox.org");
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+                        "Basic",
+                    Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "lanaitourapp", "theislandoflanai"))));
+                    var response = await client.GetAsync("/api/v1/forms?id_string=Lanai_v2"); // Lanai_v2 for product, lainai2 for dev
+                    response.EnsureSuccessStatusCode();// Throw in not success
+                    var stringResponse = await response.Content.ReadAsStringAsync();
+                    var ps = JsonConvert.DeserializeObject<IList<Object>>(stringResponse);
+                }
+                catch (HttpRequestException e)
+                {
+
                 }
             }
         }
