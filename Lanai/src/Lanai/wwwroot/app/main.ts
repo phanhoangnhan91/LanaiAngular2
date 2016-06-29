@@ -17,7 +17,8 @@ import { HeroService }     from './hero.service';
 })
 @RouteConfig(APP_ROUTES)
 export class AppComponent {
-   
+    private common = { activeView:'list'};
+    viewButtons = ['list', 'map'];
 }
 class AppBaseRequestOptions extends BaseRequestOptions {
     headers: Headers = new Headers({

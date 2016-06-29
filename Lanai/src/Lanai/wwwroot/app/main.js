@@ -22,6 +22,8 @@ var routes_1 = require('./routes');
 var hero_service_1 = require('./hero.service');
 var AppComponent = (function () {
     function AppComponent() {
+        this.common = { activeView: 'list' };
+        this.viewButtons = ['list', 'map'];
     }
     AppComponent = __decorate([
         core_1.Component({

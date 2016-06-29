@@ -67,7 +67,7 @@
 <div id="container">
     <div id="viewButton">
         <div class="field">
-            <div ng-repeat="v in viewButtons" ng-click="common.activeView=v" ng-class="{'active':common.activeView==v}" class="small-button">{{v}}</div>
+            <div *ngFor="let v of viewButtons" (click)="common.activeView=v" [ngClass]="{'active':common.activeView==v}" class="small-button">{{v}}</div>
         </div>
     </div>
     <div class="container" id="pageContent">
