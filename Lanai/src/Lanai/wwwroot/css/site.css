@@ -185,7 +185,7 @@ section.top-menu{
 #search i{
     font-size:15px;
     position: absolute;
-    right: 134px;
+    right: 149px;
     top: 6px;
 }
 #search input{
@@ -200,7 +200,7 @@ section.top-menu{
 	font-size: 14px;
     padding:0 15px 0 35px;
     position: absolute;
-    right: 0px;
+    right: 15px;
 }
 #search input:focus {
    outline:initial;
