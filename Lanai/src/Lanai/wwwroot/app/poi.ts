@@ -3,4 +3,5 @@
     name: string;
     description: string;   
     modelType: string; 
+    image0: string;
 }
