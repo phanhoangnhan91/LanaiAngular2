@@ -9,3 +9,5 @@
 /Lanai/src/Lanai/wwwroot/node_modules/rxjs/src
 /Lanai/src/Lanai/wwwroot/node_modules/rx/ts
 /Lanai/src/Lanai/wwwroot/node_modules/zone.js/lib
+/Lanai/src/Lanai/wwwroot/node_modules/reflect-metadata/temp
+/Lanai/src/Lanai/bin/Debug/netcoreapp1.0/Lanai.dll
