@@ -17,7 +17,6 @@ import { HeroService }     from './hero.service';
   `,
     directives: [ROUTER_DIRECTIVES],
     providers: [
-        ROUTER_PROVIDERS,
         HeroService
     ]
 })
@@ -31,6 +30,6 @@ class AppBaseRequestOptions extends BaseRequestOptions {
     })
 }
 bootstrap(AppComponent, [HTTP_PROVIDERS, ROUTER_PROVIDERS,
-    provide(RequestOptions, { useClass: AppBaseRequestOptions }),
     provide(LocationStrategy, { useClass: HashLocationStrategy }),
+    provide(RequestOptions, { useClass: AppBaseRequestOptions }),
 ]);
