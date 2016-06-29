@@ -1,7 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import {Hero} from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
-import {HeroService} from './hero.service';
 import { Router } from '@angular/router-deprecated';
 
 
@@ -9,7 +8,6 @@ import { Router } from '@angular/router-deprecated';
     selector: 'my-map',
     templateUrl:'app/map.component.html',
     directives: [HeroDetailComponent],
-    providers: [HeroService]
 })
 
 
@@ -20,13 +18,11 @@ export class MapComponent implements OnInit {
         this.selectedHero = hero;
     };
     heroes: Hero[]; 
-    constructor(private heroService: HeroService, private router: Router) {      
+    constructor( private router: Router) {      
     };
-    getHeroes() {
-        this.heroService.getHeroes().then(heroes => this.heroes = heroes);
-    }
+   
     ngOnInit() {
-        this.getHeroes();
+       
     }
     gotoDetail() {
         this.router.navigate(['HeroDetail', { id: this.selectedHero.id }]);

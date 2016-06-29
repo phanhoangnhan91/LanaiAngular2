@@ -9,24 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_service_1 = require('./hero.service');
+var pOI_service_1 = require('./pOI.service');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var ListComponent = (function () {
-    function ListComponent(heroService, router) {
-        this.heroService = heroService;
+    function ListComponent(pOIService, router) {
+        this.pOIService = pOIService;
         this.router = router;
         this.getNumber = function (num) {
             return (num >= 0) ? new Array(num) : [];
         };
     }
     ListComponent.prototype.ngOnInit = function () {
+        // this.pOIs=this.pOIService.getPOIs();
     };
     ListComponent = __decorate([
         core_1.Component({
             selector: 'my-list',
-            templateUrl: './app/list.component.html'
+            templateUrl: './app/list.component.html',
+            providers: [pOI_service_1.POIService]
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService, router_deprecated_1.Router])
+        __metadata('design:paramtypes', [pOI_service_1.POIService, router_deprecated_1.Router])
     ], ListComponent);
     return ListComponent;
 }());

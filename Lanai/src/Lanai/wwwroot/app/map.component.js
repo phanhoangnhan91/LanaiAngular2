@@ -10,11 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var hero_detail_component_1 = require('./hero-detail.component');
-var hero_service_1 = require('./hero.service');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var MapComponent = (function () {
-    function MapComponent(heroService, router) {
-        this.heroService = heroService;
+    function MapComponent(router) {
         this.router = router;
         this.title = 'Tour of Heroes';
     }
@@ -23,12 +21,7 @@ var MapComponent = (function () {
     };
     ;
     ;
-    MapComponent.prototype.getHeroes = function () {
-        var _this = this;
-        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
-    };
     MapComponent.prototype.ngOnInit = function () {
-        this.getHeroes();
     };
     MapComponent.prototype.gotoDetail = function () {
         this.router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
@@ -38,9 +31,8 @@ var MapComponent = (function () {
             selector: 'my-map',
             templateUrl: 'app/map.component.html',
             directives: [hero_detail_component_1.HeroDetailComponent],
-            providers: [hero_service_1.HeroService]
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService, router_deprecated_1.Router])
+        __metadata('design:paramtypes', [router_deprecated_1.Router])
     ], MapComponent);
     return MapComponent;
 }());

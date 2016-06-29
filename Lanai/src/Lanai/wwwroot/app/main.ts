@@ -5,15 +5,12 @@ import { LocationStrategy,
 import {provide, Component } from '@angular/core';
 import { RouteConfig, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, ROUTER_BINDINGS } from '@angular/router-deprecated';
 import { Routes, APP_ROUTES } from './routes';
-import { HeroService }     from './hero.service';
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/main.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [
-        HeroService
-    ]
+    
 })
 @RouteConfig(APP_ROUTES)
 export class AppComponent {

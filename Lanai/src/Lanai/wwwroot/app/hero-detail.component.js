@@ -11,18 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var hero_1 = require('./hero');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var hero_service_1 = require('./hero.service');
 var HeroDetailComponent = (function () {
-    function HeroDetailComponent(heroService, routeParams) {
-        this.heroService = heroService;
+    function HeroDetailComponent(routeParams) {
         this.routeParams = routeParams;
     }
     ;
     HeroDetailComponent.prototype.ngOnInit = function () {
-        var _this = this;
         var id = +this.routeParams.get('id');
-        this.heroService.getHero(id)
-            .then(function (hero) { return _this.hero = hero; });
     };
     HeroDetailComponent.prototype.goBack = function () {
         window.history.back();
@@ -36,7 +31,7 @@ var HeroDetailComponent = (function () {
             selector: 'my-hero-detail',
             template: "\n  <div *ngIf=\"hero\">\n    <h2>{{hero.name}} details!</h2>\n    <div><label>id: </label>{{hero.id}}</div>\n    <div>\n      <label>name: </label>\n      <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n    </div>\n  </div>\n<button (click)=\"goBack()\">Back</button>\n",
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService, router_deprecated_1.RouteParams])
+        __metadata('design:paramtypes', [router_deprecated_1.RouteParams])
     ], HeroDetailComponent);
     return HeroDetailComponent;
 }());

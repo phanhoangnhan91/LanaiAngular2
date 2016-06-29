@@ -19,7 +19,6 @@ var common_1 = require('@angular/common');
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var routes_1 = require('./routes');
-var hero_service_1 = require('./hero.service');
 var AppComponent = (function () {
     function AppComponent(router) {
         this.router = router;
@@ -33,9 +32,6 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'app/main.html',
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
-            providers: [
-                hero_service_1.HeroService
-            ]
         }),
         router_deprecated_1.RouteConfig(routes_1.APP_ROUTES), 
         __metadata('design:paramtypes', [router_deprecated_1.Router])
