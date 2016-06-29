@@ -1,6 +1,6 @@
 ﻿<div class="container" id="pageContent">
     <div class="row">
-        <div *ngFor="let i of getNumber(12);let i = index" class="col-md-4 col-sm-6 col-lg-3 m-b-50">
+        <div *ngFor="let p of pOIs;let i = index" class="col-md-4 col-sm-6 col-lg-3 m-b-50">
             <div class="photo-item" style="background-image:url(/Images/4H9A8442-Edit.jpg)">
                 <div class="label-icon lanai-car" [ngClass]="{'lanai-place':i==2,'lanai-hike':i==3,'lanai-car':i==1 }"></div>
                 <div class="card col-lg-12 no-padding">
@@ -10,17 +10,9 @@
                         <div class="col-sm-4 text-center"><i class="fa fa-volume-up"></i> <span class="counter">7</span></div>
                     </div>
                     <div class="col-sm-12">
-                        <div class="title">New Ideas For A Low Cost Vacation On Water</div>
+                        <div class="title">{{p.name}}</div>
                         <div class="description">
-                            In recent years people have realized the importance of proper diet and exercise, and recent surveys show that over the last 20 years people are eating better and working out more often, resulting in people living longer, but people are still lacking in their understanding that their mental well being is just as important as their physical health.
-
-                            Today most people get on average 4 to 6 hours of exercise every day, and make sure that everything they put in their mouths is not filled with sugars or preservatives, but they pay no attention to their mental health, no vacations, not even the occasional long weekend, 60 hour weeks, taking work home with them and even working weekends. All of this for hopes of one day getting that big promotion. What good will it do you when your brain overloads and you have a breakdown in the office.
-
-                            In the end your physical health will suffer no matter how well you eat and how often you exercise. You will wind up with high blood pressure, stress and tension all of which raises the chances of you having a stroke or heart attack.
-
-                            In hopes of helping you avoid this I am providing you with the things I do to keep my mental health in tip top condition.
-
-                            My absolute favorite thing to do to refocus myself is to go for a long ride on my Harley. Nothing brings the world back into focus like riding free like the wind, there is no better forms of therapy as far as I
+                            {{p.description}}
                         </div>
                     </div>
                 </div>

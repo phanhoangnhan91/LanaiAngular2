@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import {Hero} from './hero';
+import {POI} from './poi';
 import {POIService} from './pOI.service'
 import { Router } from '@angular/router-deprecated';
 
@@ -10,12 +10,12 @@ import { Router } from '@angular/router-deprecated';
 })
 
 export class ListComponent implements OnInit {
-    getNumber = function (num) {
-        return (num >= 0) ? new Array(num) : [];
-    }
-    private pOIs;
+    //getNumber = function (num) {
+    //    return (num >= 0) ? new Array(num) : [];
+    //}
+    private pOIs: POI[]=[];
     constructor(private pOIService: POIService, private router: Router) { }
     ngOnInit() {
-       // this.pOIs=this.pOIService.getPOIs();
+        this.pOIService.getPOIs().then(pOIs => this.pOIs = pOIs);
     }   
 }

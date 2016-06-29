@@ -3,28 +3,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using Lanai.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Lanai.Controllers
 {
-    public class Hero{
-        public int id { get; set; }
-        public string name { get; set; }
-        
-    }
+   
     [Route("api/[controller]")]
     public class POIsController : Controller
     {
-        
-        // GET: api/values
+
+        // GET: api/POIs
         [HttpGet]
-        public ActionResult Get()
+        public async Task<ActionResult> Get()
         {
-            var result = new List<Hero>();
-            result.Add(new Hero { id = 1, name = "nhan" });
-            result.Add(new Hero { id = 2, name = "Narco" });
-            return Json( new { data = result } );
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    client.BaseAddress = new Uri("https://kc.kobotoolbox.org");
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+                        "Basic",
+                    Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "ryanspillsbury90", "makanikai"))));
+                    var response = await client.GetAsync("/api/v1/data/29116");
+                    response.EnsureSuccessStatusCode();// Throw in not success
+                    var stringResponse = await response.Content.ReadAsStringAsync();
+                    //var ps = JsonConvert.DeserializeObject<IList<Object>>(stringResponse);
+                    var pois = JsonConvert.DeserializeObject<IList<POI>>(stringResponse);
+                    return Json(new { data = pois });
+                }
+                catch (HttpRequestException e)
+                {
+                    Console.WriteLine($"Request exception: {e.Message}");
+                    return Json(new { data = 0 });
+                }
+            }
         }
 
         // GET api/values/5
