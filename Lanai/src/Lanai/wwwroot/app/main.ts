@@ -2,7 +2,7 @@
 import { HTTP_PROVIDERS, RequestOptions, BaseRequestOptions, Headers } from '@angular/http';
 import { LocationStrategy,
     HashLocationStrategy } from '@angular/common';
-import {provide, Component } from '@angular/core';
+import {provide, Component, enableProdMode } from '@angular/core';
 import { RouteConfig, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, ROUTER_BINDINGS } from '@angular/router-deprecated';
 import { Routes, APP_ROUTES } from './routes';
 
@@ -26,6 +26,7 @@ class AppBaseRequestOptions extends BaseRequestOptions {
         'Content-Type': 'application/json'
     })
 }
+//enableProdMode();
 bootstrap(AppComponent, [HTTP_PROVIDERS, ROUTER_PROVIDERS,
     provide(LocationStrategy, { useClass: HashLocationStrategy }),
     provide(RequestOptions, { useClass: AppBaseRequestOptions }),
