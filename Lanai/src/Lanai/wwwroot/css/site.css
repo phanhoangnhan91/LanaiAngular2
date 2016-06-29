@@ -40,6 +40,7 @@ body, html {
     position:relative;
     margin: 0px;
     font-family: Montserrat-Bold;  
+	font-size: 14px;
 }
 
 .intro-text{  
@@ -53,7 +54,6 @@ body, html {
 }
 .intro-text span{
     padding-top:30px;
-	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -82,7 +82,6 @@ body, html {
 .tab-menu .tab-holder-middle{
 }
 .tab-menu .tab-title{
-	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -148,13 +147,11 @@ section.top-menu{
     padding:0;    
 }
 .menu li{
-	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
     cursor:pointer;   
 }
 .uppercase-text{
-	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
     cursor:pointer;
@@ -197,7 +194,6 @@ section.top-menu{
 	background-color: rgba(252,252,252,.08);
 	border: solid 1px rgba(244,244,244,.25);
     font-family: Montserrat-Light;
-	font-size: 14px;
     padding:0 15px 0 35px;
     position: absolute;
     right: 15px;
@@ -229,7 +225,6 @@ section.top-menu{
     border: solid 2px rgba(124, 153, 214,0.15);
     display:block;
     padding:3px;    
-	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
     display:flex;
@@ -326,7 +321,6 @@ section.top-menu{
 }
 .photo-item .description{
     font-family: Montserrat-Light;
-	font-size: 14px;
 	color: #8b94ae;
     height:194px;
     overflow:hidden;
@@ -369,7 +363,6 @@ section.top-menu{
 	-webkit-box-shadow: 0 5px 20px rgba(52,75,123,.15);
 	-moz-box-shadow: 0 5px 20px rgba(52,75,123,.15);
 	box-shadow: 0 5px 20px rgba(52,75,123,.15);
-	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
 	color: #6fc754;
