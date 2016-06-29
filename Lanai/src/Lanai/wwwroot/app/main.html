@@ -1,0 +1,109 @@
+﻿
+
+<div class="intro-photo">
+
+</div>
+<div class="overlay-photo">
+    <div class="container">
+        <section class="top-menu row">
+
+            <div class="logo col-md-3 col-sm-2">Lānaʻi Guide</div>
+            <div class="col-md-6 col-sm-8">
+                <ul class="menu opacity-8">
+                    <li class="col-lg-offset-1 col-md-2 active col-sm-offset-0">Explore</li>
+                    <li class="col-md-2">Places</li>
+                    <li class="col-md-2">Hikes</li>
+                    <li class="col-md-2">Driving</li>
+                    <li class="col-md-2 more">
+                        <div class="dropdown">
+                            <button class="dropdown-toggle more-button" type="button" data-toggle="dropdown">
+                                More
+                                <i class="fa fa-chevron-down"></i>
+                                <i style="display:none" class="fa fa-chevron-up"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Downloads</a></li>
+                                <li><a href="#">About</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-2 text-right" id="search">
+                <input type="text" placeholder="I’m looking for ..." />
+                <i class="fa fa-search"></i>
+                <!--<i class="fa fa-search"></i>-->
+
+            </div>
+
+        </section>
+    </div>
+    <section class="intro-text">
+        <h1>Explore the rich natural and cultural history of Lānaʻi.</h1>
+        <br />
+        <span>Please select an option</span>
+    </section>
+    <section class="tab-menu">
+        <ul>
+            <li class="active" [routerLink]="['Dashboard']">
+                <i class="fa lanai-compass"></i>
+                <span class="tab-title">Explorer</span>
+            </li>
+            <li class="tab-holder-middle" [routerLink]="['Heroes']">
+                <i class="fa lanai-place"></i>
+                <span class="tab-title">Places</span>
+            </li>
+            <li class="tab-holder-middle">
+                <i class="fa lanai-hike"></i>
+                <span class="tab-title">Hikes</span>
+            </li>
+            <li>
+                <i class="fa lanai-car"></i>
+                <span class="tab-title">Driving Tour</span>
+            </li>
+        </ul>
+    </section>
+</div>
+<div id="container">
+    <div id="viewButton">
+        <div class="field">
+            <div ng-repeat="v in viewButtons" ng-click="common.activeView=v" ng-class="{'active':common.activeView==v}" class="small-button">{{v}}</div>
+        </div>
+    </div>
+    <div class="container" id="pageContent">
+        <router-outlet></router-outlet>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <section class="top-menu row">
+                <div class="logo col-md-3 col-sm-2">Lānaʻi Guide</div>
+                <div class="col-md-6 col-sm-8">
+                    <ul class="menu opacity-8">
+                        <li class="col-md-2 active col-sm-offset-0">Explore</li>
+                        <li class="col-md-2">Places</li>
+                        <li class="col-md-2">Hikes</li>
+                        <li class="col-md-2">Driving</li>
+                        <li class="col-md-2">About</li>
+                        <li class="col-md-2">Downloads</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-2 content-right social-icon"> <i class="fa fa-twitter"></i> <i class="fa fa-facebook"></i> <i class="fa fa-google-plus"></i></div>
+            </section>
+            <div class="row">
+                <div class="line col-lg-10 col-lg-offset-1"></div>
+            </div>
+            <section class="footer-content row">
+                <div class="col-md-3 text-center col-sm-2 uppercase-text opacity-3">© Lānaʻi Guide, 2016. All Rights Reserved.</div>
+                <div class="col-md-6 col-sm-8 opacity-3">
+                    <ul class="menu privacy">
+                        <li class="col-sm-6 text-right">Privacy Policy</li>
+                        <li class="col-sm-6">Terms and Conditions</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-2 content-right">
+                    <div id="download-icon"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div> 

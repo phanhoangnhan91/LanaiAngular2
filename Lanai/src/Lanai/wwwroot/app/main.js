@@ -22,12 +22,11 @@ var routes_1 = require('./routes');
 var hero_service_1 = require('./hero.service');
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'Tour of Heroes';
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n      <h1>{{title}}</h1>\n<a [routerLink]=\"['Dashboard']\">Dashboard</a>\n  <a [routerLink]=\"['Heroes']\">Heroes</a>\n  <router-outlet></router-outlet>\n  ",
+            templateUrl: 'app/main.html',
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [
                 hero_service_1.HeroService

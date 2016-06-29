@@ -9,12 +9,7 @@ import { HeroService }     from './hero.service';
 
 @Component({
     selector: 'my-app',
-    template: `
-      <h1>{{title}}</h1>
-<a [routerLink]="['Dashboard']">Dashboard</a>
-  <a [routerLink]="['Heroes']">Heroes</a>
-  <router-outlet></router-outlet>
-  `,
+    templateUrl: 'app/main.html',
     directives: [ROUTER_DIRECTIVES],
     providers: [
         HeroService
@@ -22,7 +17,7 @@ import { HeroService }     from './hero.service';
 })
 @RouteConfig(APP_ROUTES)
 export class AppComponent {
-    title = 'Tour of Heroes';
+   
 }
 class AppBaseRequestOptions extends BaseRequestOptions {
     headers: Headers = new Headers({

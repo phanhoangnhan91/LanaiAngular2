@@ -5,7 +5,7 @@ import { HeroDetailComponent } from './hero-detail.component';
 
 export var Routes = {
     heroes: new Route({ path: '/heroes', name: 'Heroes', component: HeroesComponent }),
-    dashboard: new Route({ path: '/dashboard', name: 'Dashboard', component: DashboardComponent }),
+    dashboard: new Route({ path: '/', name: 'Dashboard', component: DashboardComponent }),
     heroDetail: new Route({ path: '/detail/:id', name: 'HeroDetail', component: HeroDetailComponent })
 };
 
