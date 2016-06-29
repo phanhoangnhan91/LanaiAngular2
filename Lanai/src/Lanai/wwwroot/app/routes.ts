@@ -1,10 +1,10 @@
 ﻿import { Route, Router } from '@angular/router-deprecated';
-import { HeroesComponent } from './heroes.component';
+import { MapComponent } from './map.component';
 import { ListComponent } from './list.component';
 import { HeroDetailComponent } from './hero-detail.component';
 
 export var Routes = {
-    heroes: new Route({ path: '/heroes', name: 'Heroes', component: HeroesComponent }),
+    heroes: new Route({ path: '/map', name: 'Map', component: MapComponent }),
     dashboard: new Route({ path: '/', name: 'List', component: ListComponent }),
     heroDetail: new Route({ path: '/detail/:id', name: 'HeroDetail', component: HeroDetailComponent })
 };

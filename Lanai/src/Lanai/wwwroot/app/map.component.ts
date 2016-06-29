@@ -6,14 +6,14 @@ import { Router } from '@angular/router-deprecated';
 
 
 @Component({
-    selector: 'my-heroes',
-    templateUrl:'app/heroes.component.html',
+    selector: 'my-map',
+    templateUrl:'app/map.component.html',
     directives: [HeroDetailComponent],
     providers: [HeroService]
 })
 
 
-export class HeroesComponent implements OnInit {
+export class MapComponent implements OnInit {
     title = 'Tour of Heroes';
     selectedHero: Hero;
     onSelect(hero: Hero) {

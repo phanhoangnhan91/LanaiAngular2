@@ -4,7 +4,7 @@ import {HeroService} from './hero.service'
 import { Router } from '@angular/router-deprecated';
 
 @Component({
-    selector: 'list',
+    selector: 'my-list',
     templateUrl: './app/list.component.html'
 })
 

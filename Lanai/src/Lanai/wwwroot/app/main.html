@@ -1,7 +1,5 @@
-﻿
-
+﻿<!-- This is layout page -->
 <div class="intro-photo">
-
 </div>
 <div class="overlay-photo">
     <div class="container">
@@ -45,11 +43,11 @@
     </section>
     <section class="tab-menu">
         <ul>
-            <li class="active" [routerLink]="['List']">
+            <li class="active">
                 <i class="fa lanai-compass"></i>
                 <span class="tab-title">Explorer</span>
             </li>
-            <li class="tab-holder-middle" [routerLink]="['Heroes']">
+            <li class="tab-holder-middle">
                 <i class="fa lanai-place"></i>
                 <span class="tab-title">Places</span>
             </li>
@@ -67,7 +65,7 @@
 <div id="container">
     <div id="viewButton">
         <div class="field">
-            <div *ngFor="let v of viewButtons" (click)="common.activeView=v" [ngClass]="{'active':common.activeView==v}" class="small-button">{{v}}</div>
+            <div *ngFor="let v of viewButtons" [routerLink]="[v]"  [class.active]="isActive([v])" class="small-button">{{v}}</div>
         </div>
     </div>
     <div class="container" id="pageContent">

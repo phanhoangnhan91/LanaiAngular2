@@ -1,10 +1,10 @@
 "use strict";
 var router_deprecated_1 = require('@angular/router-deprecated');
-var heroes_component_1 = require('./heroes.component');
+var map_component_1 = require('./map.component');
 var list_component_1 = require('./list.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 exports.Routes = {
-    heroes: new router_deprecated_1.Route({ path: '/heroes', name: 'Heroes', component: heroes_component_1.HeroesComponent }),
+    heroes: new router_deprecated_1.Route({ path: '/map', name: 'Map', component: map_component_1.MapComponent }),
     dashboard: new router_deprecated_1.Route({ path: '/', name: 'List', component: list_component_1.ListComponent }),
     heroDetail: new router_deprecated_1.Route({ path: '/detail/:id', name: 'HeroDetail', component: hero_detail_component_1.HeroDetailComponent })
 };

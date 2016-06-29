@@ -3,7 +3,7 @@ import { HTTP_PROVIDERS, RequestOptions, BaseRequestOptions, Headers } from '@an
 import { LocationStrategy,
     HashLocationStrategy } from '@angular/common';
 import {provide, Component } from '@angular/core';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, ROUTER_BINDINGS } from '@angular/router-deprecated';
+import { RouteConfig, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, ROUTER_BINDINGS } from '@angular/router-deprecated';
 import { Routes, APP_ROUTES } from './routes';
 import { HeroService }     from './hero.service';
 
@@ -17,8 +17,12 @@ import { HeroService }     from './hero.service';
 })
 @RouteConfig(APP_ROUTES)
 export class AppComponent {
-    private common = { activeView:'list'};
-    viewButtons = ['list', 'map'];
+    constructor(private router: Router) {
+    }
+    viewButtons = ['List', 'Map'];
+    isActive(instruction: any[]): boolean {
+        return this.router.isRouteActive(this.router.generate(instruction));
+    }
 }
 class AppBaseRequestOptions extends BaseRequestOptions {
     headers: Headers = new Headers({

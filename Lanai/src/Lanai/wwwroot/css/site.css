@@ -244,7 +244,7 @@ section.top-menu{
     cursor:pointer;
 }
 
-#viewButton .small-button.active,#viewButton .small-button:hover {   
+#viewButton .small-button.active {   
 	-webkit-border-radius: 21px;
 	-moz-border-radius: 21px;
 	border-radius: 21px;
@@ -252,7 +252,8 @@ section.top-menu{
 	-webkit-box-shadow: 0 5px 20px rgba(52,75,123,.15);
 	-moz-box-shadow: 0 5px 20px rgba(52,75,123,.15);
 	box-shadow: 0 5px 20px rgba(52,75,123,.15);
-    color: #6fc754;    
+    color: #6fc754; 
+    cursor:default;   
 }
 
 

@@ -12,37 +12,37 @@ var core_1 = require('@angular/core');
 var hero_detail_component_1 = require('./hero-detail.component');
 var hero_service_1 = require('./hero.service');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var HeroesComponent = (function () {
-    function HeroesComponent(heroService, router) {
+var MapComponent = (function () {
+    function MapComponent(heroService, router) {
         this.heroService = heroService;
         this.router = router;
         this.title = 'Tour of Heroes';
     }
-    HeroesComponent.prototype.onSelect = function (hero) {
+    MapComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
     };
     ;
     ;
-    HeroesComponent.prototype.getHeroes = function () {
+    MapComponent.prototype.getHeroes = function () {
         var _this = this;
         this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
     };
-    HeroesComponent.prototype.ngOnInit = function () {
+    MapComponent.prototype.ngOnInit = function () {
         this.getHeroes();
     };
-    HeroesComponent.prototype.gotoDetail = function () {
+    MapComponent.prototype.gotoDetail = function () {
         this.router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
     };
-    HeroesComponent = __decorate([
+    MapComponent = __decorate([
         core_1.Component({
-            selector: 'my-heroes',
-            templateUrl: 'app/heroes.component.html',
+            selector: 'my-map',
+            templateUrl: 'app/map.component.html',
             directives: [hero_detail_component_1.HeroDetailComponent],
             providers: [hero_service_1.HeroService]
         }), 
         __metadata('design:paramtypes', [hero_service_1.HeroService, router_deprecated_1.Router])
-    ], HeroesComponent);
-    return HeroesComponent;
+    ], MapComponent);
+    return MapComponent;
 }());
-exports.HeroesComponent = HeroesComponent;
-//# sourceMappingURL=heroes.component.js.map
+exports.MapComponent = MapComponent;
+//# sourceMappingURL=map.component.js.map

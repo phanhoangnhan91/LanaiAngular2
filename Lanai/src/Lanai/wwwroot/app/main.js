@@ -21,10 +21,13 @@ var router_deprecated_1 = require('@angular/router-deprecated');
 var routes_1 = require('./routes');
 var hero_service_1 = require('./hero.service');
 var AppComponent = (function () {
-    function AppComponent() {
-        this.common = { activeView: 'list' };
-        this.viewButtons = ['list', 'map'];
+    function AppComponent(router) {
+        this.router = router;
+        this.viewButtons = ['List', 'Map'];
     }
+    AppComponent.prototype.isActive = function (instruction) {
+        return this.router.isRouteActive(this.router.generate(instruction));
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
@@ -35,7 +38,7 @@ var AppComponent = (function () {
             ]
         }),
         router_deprecated_1.RouteConfig(routes_1.APP_ROUTES), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_deprecated_1.Router])
     ], AppComponent);
     return AppComponent;
 }());

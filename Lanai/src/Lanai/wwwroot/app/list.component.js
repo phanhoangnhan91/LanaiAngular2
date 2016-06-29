@@ -23,7 +23,7 @@ var ListComponent = (function () {
     };
     ListComponent = __decorate([
         core_1.Component({
-            selector: 'list',
+            selector: 'my-list',
             templateUrl: './app/list.component.html'
         }), 
         __metadata('design:paramtypes', [hero_service_1.HeroService, router_deprecated_1.Router])
