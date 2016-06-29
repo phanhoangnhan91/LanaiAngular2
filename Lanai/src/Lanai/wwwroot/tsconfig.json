@@ -9,11 +9,5 @@
     "removeComments": false,
     "noImplicitAny": false
 
-  },
-  "exclude": [
-    "node_modules/**/*.d.ts",
-    "wwwroot",
-    "typings/main",
-    "typings/main.d.ts"
-  ]
+  }
 }
