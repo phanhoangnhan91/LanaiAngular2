@@ -56,7 +56,6 @@ body, html {
 	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
-    opacity:.6;
 }
 .tab-menu{
     position: absolute;
@@ -163,9 +162,14 @@ section.top-menu{
 .opacity-3{
     opacity:.3;
 }
+.opacity-6{
+    opacity:.6;
+}
 .opacity-8{
     opacity:.8;
 }
+
+
 .menu li.active,.menu li:hover {
     opacity:0.4;
 }
@@ -176,7 +180,6 @@ section.top-menu{
     opacity:.4;
 }
 #search{
-    opacity:0.6;
     margin-top: -5px;
 }
 #search i{
