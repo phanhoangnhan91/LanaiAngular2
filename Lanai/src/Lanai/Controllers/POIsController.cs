@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Lanai.Models;
+using Lanai.Helpers;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -29,12 +30,13 @@ namespace Lanai.Controllers
                     client.BaseAddress = new Uri("https://kc.kobotoolbox.org");
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                         "Basic",
-                    Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "lanaitourapp", "theislandoflanai"))));
-                    var response = await client.GetAsync("/api/v1/data/31202"); //31202 for product, 29116 for dev
+                    Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(string.Format("{0}:{1}", Configuration.USERNAME, Configuration.PASSWORD))));
+                    var response = await client.GetAsync("/api/v1/data/"+Configuration.FORM_ID); //31202 for product, 29116 for dev
                     response.EnsureSuccessStatusCode();// Throw in not success
                     var stringResponse = await response.Content.ReadAsStringAsync();
                     //var ps = JsonConvert.DeserializeObject<IList<Object>>(stringResponse);
                     var pois = JsonConvert.DeserializeObject<IList<POI>>(stringResponse);
+                    ChangeImage0Name(pois);
                     return Json(new { data = pois });
                 }
                 catch (HttpRequestException e)
@@ -44,6 +46,18 @@ namespace Lanai.Controllers
                 }
             }
         }
+        /// <summary>
+        /// change name to contain user name
+        /// </summary>
+        /// <param name="pois"></param>
+        private void ChangeImage0Name(IList<POI> pois)
+        {
+            foreach(var p in pois)
+            {
+                p.image0 = Configuration.USERNAME + "/attachments/" + p.image0;
+            }
+        }
+
         /// <summary>
         /// use for get id at the first time
         /// </summary>
@@ -56,8 +70,8 @@ namespace Lanai.Controllers
                     client.BaseAddress = new Uri("https://kc.kobotoolbox.org");
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                         "Basic",
-                    Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "lanaitourapp", "theislandoflanai"))));
-                    var response = await client.GetAsync("/api/v1/forms?id_string=Lanai_v2"); // Lanai_v2 for product, lainai2 for dev
+                    Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(string.Format("{0}:{1}", Configuration.USERNAME, Configuration.PASSWORD))));
+                    var response = await client.GetAsync("/api/v1/forms?id_string="+Configuration.FORM_ID_STRING); // Lanai_v2 for product, lainai2 for dev
                     response.EnsureSuccessStatusCode();// Throw in not success
                     var stringResponse = await response.Content.ReadAsStringAsync();
                     var ps = JsonConvert.DeserializeObject<IList<Object>>(stringResponse);
