@@ -11,29 +11,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var hero_service_1 = require('./hero.service');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var DashboardComponent = (function () {
-    function DashboardComponent(heroService, router) {
+var ListComponent = (function () {
+    function ListComponent(heroService, router) {
         this.heroService = heroService;
         this.router = router;
-        this.heroes = [];
+        this.getNumber = function (num) {
+            return (num >= 0) ? new Array(num) : [];
+        };
     }
-    DashboardComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.heroService.getHeroes()
-            .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
+    ListComponent.prototype.ngOnInit = function () {
     };
-    DashboardComponent.prototype.gotoDetail = function (hero) {
-        var link = ['HeroDetail', { id: hero.id }];
-        this.router.navigate(link);
-    };
-    DashboardComponent = __decorate([
+    ListComponent = __decorate([
         core_1.Component({
-            selector: 'my-dashboard',
-            templateUrl: './app/dashboard.component.html'
+            selector: 'list',
+            templateUrl: './app/list.component.html'
         }), 
         __metadata('design:paramtypes', [hero_service_1.HeroService, router_deprecated_1.Router])
-    ], DashboardComponent);
-    return DashboardComponent;
+    ], ListComponent);
+    return ListComponent;
 }());
-exports.DashboardComponent = DashboardComponent;
-//# sourceMappingURL=dashboard.component.js.map
+exports.ListComponent = ListComponent;
+//# sourceMappingURL=list.component.js.map
