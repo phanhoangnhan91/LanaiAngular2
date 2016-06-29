@@ -50,10 +50,10 @@ namespace Lanai
 
             // this will serve up node_modules
             var provider = new PhysicalFileProvider(
-                Path.Combine(_contentRootPath, "node_modules")
+                Path.Combine(_contentRootPath, "wwwroot/node_modules")
             );
             var _fileServerOptions = new FileServerOptions();
-            _fileServerOptions.RequestPath = "/node_modules";
+            _fileServerOptions.RequestPath = "/wwwroot/node_modules";
             _fileServerOptions.StaticFileOptions.FileProvider = provider;
             _fileServerOptions.EnableDirectoryBrowsing = true;
             app.UseFileServer(_fileServerOptions);
