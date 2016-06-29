@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -13,3 +13,5 @@
 /Lanai/src/Lanai/bin/Debug/netcoreapp1.0/Lanai.dll
 /Lanai/src/Lanai/wwwroot/app/*.js
 /Lanai/src/Lanai/wwwroot/app/*.js.map
+Lanai/src/Lanai/bin/Debug/netcoreapp1.0/658ef778-e4d8-45f4-864d-6e59dfc2cdf5_Lanai.dll
+/Lanai/src/Lanai/obj/Debug/netcoreapp1.0

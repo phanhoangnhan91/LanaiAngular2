@@ -14,7 +14,7 @@ namespace Lanai.Controllers
         
     }
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class POIsController : Controller
     {
         
         // GET: api/values
